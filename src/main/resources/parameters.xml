@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Business Object Gmail" data-provider-thread-count="3" parallel="classes" >
+    <test name="deleteInboxMessage">
+        <classes>
+            <class name="com.epam.lab.DeleteInboxMessageTest">
+            </class>
+        </classes>
+    </test>
+</suite>
