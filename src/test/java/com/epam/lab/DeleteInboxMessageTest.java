@@ -13,7 +13,6 @@ import org.testng.annotations.*;
 
 public class DeleteInboxMessageTest {
     private ConfigFileReader configFileReader;
-    public static int initialInboxEmailQuantity;
 
     @BeforeClass
     public void setupDriver() {
@@ -29,12 +28,7 @@ public class DeleteInboxMessageTest {
         driver.get(configFileReader.getWebSiteUrl());
         LoginPageBO loginPageBO = new LoginPageBO(driver);
         loginPageBO.loginToGmail(login, password);
-        InboxPageBO inboxPageBO = new InboxPageBO(driver);
-        initialInboxEmailQuantity = inboxPageBO.checkInboxEmailQaontity();
-        inboxPageBO.selectInboxEmail();
-        inboxPageBO.deleteEmail();
-        inboxPageBO.cancelDeletingEmail();
-        Assert.assertEquals(initialInboxEmailQuantity, inboxPageBO.checkInboxEmailQaontity());
+        Assert.assertTrue(loginPageBO.checkLoginStatus());
     }
 
     @AfterMethod

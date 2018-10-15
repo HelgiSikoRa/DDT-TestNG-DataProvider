@@ -16,4 +16,7 @@ public class LoginPageBO {
                 .enterPassword(password)
                 .submitPassword();
     }
+    public boolean checkLoginStatus(){
+        return loginPage.checkLoginStatus();
+    }
 }

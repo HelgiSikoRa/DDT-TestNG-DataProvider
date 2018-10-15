@@ -44,4 +44,10 @@ public class LoginPage extends AbstractPage {
     public void submitPassword() {
         this.password.submit();
     }
+
+    public boolean checkLoginStatus(){
+        LOG.info("Checked login status");
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("table.F.cf.zt tbody div[role='checkbox']")));
+        return driver.getCurrentUrl().contains("inbox");
+    }
 }
